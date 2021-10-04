@@ -1,0 +1,17 @@
+{
+  "name": "js-car-rental-game-engine",
+  "version": "1.0.0",
+  "description": "JavaScript Car Rental + Game Engine test task",
+  "scripts": {
+    "test": "jest -i --forceExit "
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "babel-jest": "^26.1.0",
+    "jest": "^26.1.0"
+  }
+}
