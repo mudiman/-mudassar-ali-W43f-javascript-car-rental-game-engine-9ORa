@@ -49,7 +49,7 @@ export default class GamePlay {
           : loser instanceof Boss
           ? Config.enemy.experienceGiven
           : 0;
-      winner.gainExperience(exp);
+      winner.gainExperience(exp * loser.level);
       if (winner.experience >= Config.hero.experienceToNextLevel) {
         winner.level += 1;
         winner.experience -= Config.hero.experienceToNextLevel;
