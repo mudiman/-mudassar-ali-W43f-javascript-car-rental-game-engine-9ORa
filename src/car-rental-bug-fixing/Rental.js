@@ -16,7 +16,7 @@ export default class Rental {
             fee *= this.duration;
             fees += fee;
         }
-
+        
         return fees;
     }
 

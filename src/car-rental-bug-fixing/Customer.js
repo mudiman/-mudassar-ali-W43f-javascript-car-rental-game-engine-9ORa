@@ -11,22 +11,21 @@ export default class Customer {
         this.rentals.push(rental);
     }
 
-    getTotalFees() {
+    async getTotalFees() {
         let totalFees = 0;
         for (let i = 0; i < this.rentals.length; i++) {
-            totalFees += this.rentals[i].getFees();
+            const fee = await this.rentals[i].getFees();
+            totalFees += fee; 
         }
-
         return `Customer ${this.name}'s total fees is ${totalFees}`;
     }
 
-    getDetailedFees() {
+    async getDetailedFees() {
         const output = [];
 
         for (let i = 0; i < this.rentals.length; i++) {
-            this.rentals[i].getFees().then((fee) => {
-                output.push(`Fees for Rental Number ${i + 1} is ${fee}`);
-            })
+            const fee = await this.rentals[i].getFees();
+            output.push(`Fees for Rental Number ${i + 1} is ${fee}`);
         }
 
         return output;

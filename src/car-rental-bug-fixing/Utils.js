@@ -5,10 +5,13 @@ export function getCarFees(id) {
             switch (id) {
                 case 1:
                     fee = 70;
+                    break;
                 case 2:
                     fee = 100;
+                    break;
                 case 3:
                     fee = 130;
+                    break;
             }
             resolve(fee);
         }, 200)
