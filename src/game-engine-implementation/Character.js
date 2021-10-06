@@ -6,6 +6,8 @@ export default class Character {
     isDead;
 
     constructor(level) {
+        this.level = level;
+        this.isDead = false;
     }
 
     attack(character) {
