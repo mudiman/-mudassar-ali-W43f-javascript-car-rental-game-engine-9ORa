@@ -33,17 +33,15 @@ export default class GamePlay {
     }
 
     while (firstCharacter.health >= 0 && secondCharacter.health >= 0) {
-      secondCharacter.health -= firstCharacter.hitDamage;
+      firstCharacter.attack(secondCharacter);
       if (secondCharacter.health < 0) {
         break;
       }
-      firstCharacter.health -= secondCharacter.hitDamage;
+      firstCharacter.takeAHit(secondCharacter.hitDamage);
     }
-    const winner = firstCharacter.health > 0 ? firstCharacter : secondCharacter;
-    const loser = firstCharacter.health > 0 ? secondCharacter : firstCharacter;
-
-    loser.health = 0;
-
+    const [winner, loser] = firstCharacter.health > 0 ? [firstCharacter , secondCharacter] : [secondCharacter , firstCharacter ];
+    loser.die();
+    
     if (winner instanceof Hero) {
       const exp =
         loser instanceof Enemy

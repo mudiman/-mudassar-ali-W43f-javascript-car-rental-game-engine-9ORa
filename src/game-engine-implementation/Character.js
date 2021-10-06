@@ -1,21 +1,25 @@
 export default class Character {
-    health;
-    level;
-    hitDamage;
-    maxHealth;
-    isDead;
+  health;
+  level;
+  hitDamage;
+  maxHealth;
+  isDead;
 
-    constructor(level) {
-        this.level = level;
-        this.isDead = false;
-    }
+  constructor(level) {
+    this.level = level;
+    this.isDead = false;
+  }
 
-    attack(character) {
-    }
+  attack(character) {
+    character.health -= this.hitDamage;
+  }
 
-    takeAHit(damage) {
-    }
+  takeAHit(damage) {
+    this.health -= damage;
+  }
 
-    die() {
-    }
+  die() {
+    this.isDead = true;
+    this.health = 0;
+  }
 }
